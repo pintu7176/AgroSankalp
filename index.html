@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AgroSankalp - Farmers Web App</title>
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body>
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="logo">
+      <i class="fa-solid fa-leaf"></i>
+      <span>AgroSankalp</span>
+    </div>
+    <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle Menu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+    <nav class="nav-links">
+      <a href="#dashboard" class="active">Home</a>
+      <a href="#weather">Weather</a>
+      <a href="#market">Market Quotes</a>
+      <a href="#services">Services</a>
+      <a href="#schemes">Schemes</a>
+      <a href="#store">Store</a>
+      <a href="#community">Community</a>
+    </nav>
+    <div class="user-profile">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Dark Mode">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+      <button class="login-btn" id="loginBtn">Log In</button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="app">
+    <section class="hero" id="dashboard">
+      <div class="hero-content">
+        <div class="status-badge">
+          <i class="fa-solid fa-bolt"></i>
+          Platform Live 2026 Edition
+        </div>
+        <h1>Empowering Farmers <span>Every Day</span></h1>
+        <p>Your premium multi-utility companion for optimal crop management, real-time market insights, and sustainable
+          farming practices.</p>
+        <div class="cta-group">
+          <button class="cta-button" id="getStartedBtn">
+            Get Started <i class="fa-solid fa-arrow-right"></i>
+          </button>
+          <button class="secondary-button">
+            Watch Demo
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="weather-section" id="weather">
+      <div class="section-header">
+        <h2>Hyper-Local Weather Forecast</h2>
+        <p>Real-time agricultural weather metrics for your farming zone to plan your activities.</p>
+      </div>
+      <div class="weather-container">
+        <div class="weather-card current-weather">
+          <div class="weather-header">
+            <i class="fa-solid fa-location-dot"></i> <span id="locationName">Fetching Location...</span>
+          </div>
+          <div class="weather-body">
+            <div class="weather-temp">
+              <i id="currentWeatherIcon" class="fa-solid fa-spinner fa-spin fa-2x weather-icon-main"></i>
+              <span id="currentTemp">--°</span>
+            </div>
+            <div class="weather-details">
+              <p id="currentCondition">Loading Data</p>
+              <div class="weather-stats">
+                <span><i class="fa-solid fa-droplet"></i> <span id="currentHumidity">--%</span> Humidity</span>
+                <span><i class="fa-solid fa-wind"></i> <span id="currentWind">-- km/h</span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="weather-card forecast" id="forecastContainer">
+          <div style="text-align: center; color: var(--color-text-muted); padding: 2rem 0;">
+             <i class="fa-solid fa-spinner fa-spin" style="font-size: 2rem; margin-bottom: 1rem;"></i>
+             <p>Generating local forecast...</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features-section" id="market">
+      <div class="section-header">
+        <h2>Everything You Need</h2>
+        <p>A unified suite of tools designed to maximize your yield and profit.</p>
+      </div>
+      <div class="features">
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">
+            <i class="fa-solid fa-cloud-sun-rain feature-icon"></i>
+          </div>
+          <h3>Smart Weather</h3>
+          <p>Get accurate, hyper-local weather forecasts tailored specifically for your farming schedules.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">
+            <i class="fa-solid fa-chart-line feature-icon"></i>
+          </div>
+          <h3>Market Prices</h3>
+          <p>Live crop prices from local and national markets to help you get the best value for your produce.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">
+            <i class="fa-solid fa-seedling feature-icon"></i>
+          </div>
+          <h3>Crop Support</h3>
+          <p>AI-driven insights for pest control, fertilizers, and strategies to maximize your farm yield.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">
+            <i class="fa-solid fa-tractor feature-icon"></i>
+          </div>
+          <h3>Equipment Rental</h3>
+          <p>Find and rent tractors, harvesters, and other modern farming machinery effortlessly at affordable rates.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">
+            <i class="fa-solid fa-flask feature-icon"></i>
+          </div>
+          <h3>Soil Health</h3>
+          <p>Analyze your soil conditions and get personalized recommendations for crop rotation and nutrient
+            management.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">
+            <i class="fa-solid fa-users feature-icon"></i>
+          </div>
+          <h3>Expert Community</h3>
+          <p>Connect with agriculture experts and fellow farmers to share knowledge and discuss best practices.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="services-section container-padded" id="services">
+      <div class="section-header">
+        <h2>Premium Services</h2>
+        <p>Book expert consultations, equipment, and field services instantly with a single click.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-drone"></i> <i class="fa-solid fa-plane"></i></div>
+          <div class="service-info">
+            <h3>Drone Spraying</h3>
+            <p>Hire automated drones for pesticide and fertilizer spraying. Fast, efficient, and precise.</p>
+          </div>
+          <button class="btn-service" data-service="Drone Spraying">Book Service <i class="fa-solid fa-plus"></i></button>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-truck"></i></div>
+          <div class="service-info">
+            <h3>Harvest Transport</h3>
+            <p>Schedule temperature-controlled trucks for immediate harvest transportation to the market.</p>
+          </div>
+          <button class="btn-service" data-service="Harvest Transport">Book Service <i class="fa-solid fa-plus"></i></button>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-vial"></i></div>
+          <div class="service-info">
+            <h3>Soil Testing</h3>
+            <p>Comprehensive soil nutrient testing and analysis delivered right to your farm.</p>
+          </div>
+          <button class="btn-service" data-service="Soil Testing">Book Service <i class="fa-solid fa-plus"></i></button>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-clipboard-user"></i></div>
+          <div class="service-info">
+            <h3>Agronomy Consulting</h3>
+            <p>Book a 1-on-1 virtual or in-person consultation with certified agronomy experts.</p>
+          </div>
+          <button class="btn-service" data-service="Agronomy Consulting">Book Service <i class="fa-solid fa-plus"></i></button>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <div class="service-info">
+            <h3>Crop Insurance</h3>
+            <p>Safeguard your harvest with rapid, hassle-free crop insurance tailored for seasonal risks.</p>
+          </div>
+          <button class="btn-service" data-service="Crop Insurance">Book Service <i class="fa-solid fa-plus"></i></button>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-wrench"></i></div>
+          <div class="service-info">
+            <h3>Machinery Repair</h3>
+            <p>Request on-site mechanics for swift tractor and harvesting equipment diagnostics and repair.</p>
+          </div>
+          <button class="btn-service" data-service="Machinery Repair">Book Service <i class="fa-solid fa-plus"></i></button>
+        </div>
+      </div>
+    </section>
+
+    </section>
+
+    <section class="schemes-section container-padded" id="schemes">
+      <div class="section-header">
+        <h2>Government Schemes</h2>
+        <p>Discover and apply for agricultural subsidies and financial assistance programs.</p>
+      </div>
+      <div class="schemes-grid">
+        <div class="scheme-card">
+          <div class="scheme-header">
+            <i class="fa-solid fa-hand-holding-dollar scheme-icon"></i>
+            <h3>PM-KISAN</h3>
+          </div>
+          <p>Pradhan Mantri Kisan Samman Nidhi provides minimum income support of ₹6,000 per year directly to farmer accounts.</p>
+          <button class="btn-scheme" data-scheme="PM-KISAN">Apply Now <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+        <div class="scheme-card">
+          <div class="scheme-header">
+            <i class="fa-solid fa-shield-cat scheme-icon"></i>
+            <h3>PM Fasal Bima Yojana</h3>
+          </div>
+          <p>A comprehensive crop insurance scheme safeguarding against unseasonal rains and non-preventable natural risks.</p>
+          <button class="btn-scheme" data-scheme="PMFBY">Learn More <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+        <div class="scheme-card">
+          <div class="scheme-header">
+            <i class="fa-solid fa-credit-card scheme-icon"></i>
+            <h3>Kisan Credit Card (KCC)</h3>
+          </div>
+          <p>Access adequate and timely credit support from the banking system via flexible single-window loans.</p>
+          <button class="btn-scheme" data-scheme="Kisan Credit Card">Apply Now <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+        <div class="scheme-card">
+          <div class="scheme-header">
+            <i class="fa-solid fa-microscope scheme-icon"></i>
+            <h3>Soil Health Card</h3>
+          </div>
+          <p>State governments issue soil assessment cards assessing nutrient deficiencies to promote balanced fertilizer use.</p>
+          <button class="btn-scheme" data-scheme="Soil Health Card">Learn More <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+        <div class="scheme-card">
+          <div class="scheme-header">
+            <i class="fa-solid fa-laptop scheme-icon"></i>
+            <h3>e-NAM Portal</h3>
+          </div>
+          <p>A pan-India electronic trading portal networking existing APMC mandis to create a unified national market.</p>
+          <button class="btn-scheme" data-scheme="e-NAM Portal">Apply Now <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+        <div class="scheme-card">
+          <div class="scheme-header">
+            <i class="fa-solid fa-seedling scheme-icon"></i>
+            <h3>PKVY Organic Farming</h3>
+          </div>
+          <p>Paramparagat Krishi Vikas Yojana promotes organic farming through a cluster approach with financial assistance.</p>
+          <button class="btn-scheme" data-scheme="PKVY Organic Farming">Learn More <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="store-section container-padded" id="store">
+      <div class="section-header">
+        <h2>Premium Store</h2>
+        <p>Purchase high-yield seeds, advanced fertilizers, and modern equipment right here.</p>
+      </div>
+      <div class="store-grid">
+        <div class="store-card">
+          <div class="store-icon"><i class="fa-solid fa-seedling"></i></div>
+          <div class="store-info">
+            <div class="store-category">Seeds</div>
+            <h3>Premium Hybrid Wheat</h3>
+            <div class="store-price">₹450 <small>/ 10kg</small></div>
+          </div>
+          <button class="btn-store" data-product="Premium Hybrid Wheat">Add to Cart <i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+        <div class="store-card">
+          <div class="store-icon"><i class="fa-solid fa-flask"></i></div>
+          <div class="store-info">
+            <div class="store-category">Fertilizer</div>
+            <h3>Organic Neem Oil</h3>
+            <div class="store-price">₹250 <small>/ Liter</small></div>
+          </div>
+          <button class="btn-store" data-product="Organic Neem Oil">Add to Cart <i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+        <div class="store-card">
+          <div class="store-icon"><i class="fa-solid fa-vial"></i></div>
+          <div class="store-info">
+            <div class="store-category">Fertilizer</div>
+            <h3>NPK 10-26-26</h3>
+            <div class="store-price">₹1,200 <small>/ 50kg</small></div>
+          </div>
+          <button class="btn-store" data-product="NPK 10-26-26">Add to Cart <i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+        <div class="store-card">
+          <div class="store-icon"><i class="fa-solid fa-hammer"></i></div>
+          <div class="store-info">
+            <div class="store-category">Tools</div>
+            <h3>Advanced Hand Cultivator</h3>
+            <div class="store-price">₹350 <small>/ Piece</small></div>
+          </div>
+          <button class="btn-store" data-product="Advanced Hand Cultivator">Add to Cart <i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="community-section" id="community">
+      <div class="section-header">
+        <h2>Farmer's Community</h2>
+        <p>Join the largest network of modern farmers to share knowledge and seek advice.</p>
+      </div>
+      <div class="community-container">
+        <div class="community-card detail-card glassmorphism">
+          <div class="community-header">
+            <div class="avatar-icon"><i class="fa-solid fa-user-tie"></i></div>
+            <div>
+              <h4>Rakesh Singh</h4>
+              <span>Wheat Farmer • Active 2h ago</span>
+            </div>
+          </div>
+          <p class="community-post">"Has anyone tried the new organic crop treatment recommended for stem rust? Looking
+            for some reviews before I switch over."</p>
+          <div class="community-actions">
+            <button><i class="fa-regular fa-thumbs-up"></i> 24 Likes</button>
+            <button><i class="fa-regular fa-comment"></i> 12 Answers</button>
+          </div>
+        </div>
+        <div class="community-card primary-card">
+          <div class="community-cta">
+            <div class="cta-icon-wrapper"><i class="fa-solid fa-users"></i></div>
+            <h3>Join the Discussion</h3>
+            <p>Ask questions, connect with experts, and grow your network today.</p>
+            <button class="btn-community">Create a Post <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">
+        <i class="fa-solid fa-leaf"></i> AgroSankalp
+      </div>
+      <div class="social-links">
+        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>&copy; 2026 AgroSankalp. Built for a better tomorrow.</p>
+    </div>
+  </footer>
+
+  <!-- Create Post Modal -->
+  <div class="modal-overlay" id="createPostModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Create a New Post</h3>
+        <button class="modal-close" id="closeModalBtn"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <form id="createPostForm">
+          <div class="form-group">
+            <label for="postCategory">Topic Area</label>
+            <select id="postCategory" class="form-control" required>
+              <option value="" disabled selected>Select a relevant topic...</option>
+              <option value="crop">Crop Health & Disease</option>
+              <option value="equipment">Farming Equipment</option>
+              <option value="weather">Weather Patterns</option>
+              <option value="market">Market & Pricing</option>
+              <option value="general">General Advice</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="postContent">Your Message</label>
+            <textarea id="postContent" class="form-control" rows="5"
+              placeholder="Share your experience, ask a question, or seek advice from the community..."
+              required></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="secondary-button" id="cancelPostBtn"
+          style="padding: 0.75rem 1.5rem; font-size: 1rem; border-width: 1px;">Cancel</button>
+        <button class="cta-button" id="submitPostBtn"
+          style="padding: 0.75rem 1.5rem; font-size: 1rem; margin-left: 0.5rem;">Publish Post</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Login Modal -->
+  <div class="modal-overlay" id="loginModal">
+    <div class="modal-content" style="max-width: 450px;">
+      <div class="modal-header">
+        <h3>Farmer Log In</h3>
+        <button class="modal-close" id="closeLoginModalBtn"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <form id="loginForm">
+          <div class="form-group">
+            <label for="loginEmail">Email Address</label>
+            <input type="email" id="loginEmail" class="form-control" placeholder="Enter your email..." required>
+          </div>
+          <div class="form-group">
+            <label for="loginPassword">Password</label>
+            <input type="password" id="loginPassword" class="form-control" placeholder="Enter your password..." required>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer" style="display: flex; justify-content: space-between; align-items: center; padding-top: 1.5rem;">
+        <a href="#" style="color: var(--color-primary); text-decoration: none; font-size: 0.95rem; font-weight: 600;">Forgot Password?</a>
+        <div>
+          <button class="secondary-button" id="cancelLoginBtn"
+            style="padding: 0.75rem 1.5rem; font-size: 1rem; border-width: 1px;">Cancel</button>
+          <button class="cta-button" id="submitLoginBtn"
+            style="padding: 0.75rem 1.5rem; font-size: 1rem; margin-left: 0.5rem;">Log In</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Account Modal -->
+  <div class="modal-overlay" id="accountModal">
+    <div class="modal-content" style="max-width: 450px;">
+      <div class="modal-header">
+        <h3>My Account</h3>
+        <button class="modal-close" id="closeAccountModalBtn"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" style="text-align: center;">
+        <div class="avatar-icon" style="margin: 0 auto 1.5rem; width: 80px; height: 80px; font-size: 2.5rem;">
+          <i class="fa-solid fa-user-tie"></i>
+        </div>
+        <h3 id="accountNameLabel" style="font-size: 1.5rem; margin-bottom: 0.5rem; font-weight: 700;">Farmer Member</h3>
+        <p id="accountEmailLabel" style="color: var(--color-text-muted); font-size: 1.1rem; margin-bottom: 2rem;">user@example.com</p>
+        
+        <div style="background: var(--color-bg-main); padding: 1.5rem; border-radius: 12px; margin-bottom: 1rem; border: 1px solid var(--color-border); text-align: left;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
+            <span style="font-weight: 600; color: var(--color-text-main);">Account Status</span>
+            <span style="color: var(--color-primary); font-weight: 700;">Active</span>
+          </div>
+          <div style="display: flex; justify-content: space-between;">
+            <span style="font-weight: 600; color: var(--color-text-main);">Member Since</span>
+            <span style="color: var(--color-text-muted);">2026</span>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer" style="display: flex; justify-content: center; padding-top: 1.5rem;">
+        <button class="secondary-button" id="logoutBtn" style="border-color: #ef4444; color: #ef4444; padding: 0.75rem 2rem; width: 100%;">
+          <i class="fa-solid fa-right-from-bracket" style="margin-right: 0.5rem;"></i> Log Out
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Reply Post Modal -->
+  <div class="modal-overlay" id="replyPostModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Submit a Reply</h3>
+        <button class="modal-close" id="closeReplyModalBtn"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <form id="replyPostForm">
+          <div class="form-group">
+            <label for="replyPostContent">Your Answer</label>
+            <textarea id="replyPostContent" class="form-control" rows="4"
+              placeholder="Type your helpful answer or discussion point here..." required></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="secondary-button" id="cancelReplyBtn"
+          style="padding: 0.75rem 1.5rem; font-size: 1rem; border-width: 1px;">Cancel</button>
+        <button class="cta-button" id="submitReplyBtn"
+          style="padding: 0.75rem 1.5rem; font-size: 1rem; margin-left: 0.5rem;">Submit Reply</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
